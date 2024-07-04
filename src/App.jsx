@@ -1,8 +1,16 @@
-import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 
-import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
-import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages';
+import { Searchbar, Sidebar, MusicPlayer, TopPlay } from "./components";
+import {
+  ArtistDetails,
+  TopArtists,
+  AroundYou,
+  Discover,
+  Search,
+  SongDetails,
+  TopCharts,
+} from "./pages";
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
@@ -31,7 +39,7 @@ const App = () => {
         </div>
       </div>
 
-      {activeSong?.title && (
+      {activeSong?.album?.name && (
         <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
           <MusicPlayer />
         </div>

@@ -9,3 +9,4 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(spotify23.middleware)
 });
+  

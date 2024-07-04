@@ -1,4 +1,4 @@
-import { Error, Loader, SongCard } from "../components";
+import { Error, Loader, MusicPlayer, SongCard } from "../components";
 import { genres } from "../assets/constants";
 import { useGetRecommendationQuery } from "../redux/services/shazamCore";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +10,8 @@ const Discover = () => {
   const genreTitle = "Pop";
   if (isFetching) return <Loader title="Loading songs...." />;
   if (error) return <Error />;
-  console.log(data);
+  // console.log(data);
+  // console.log(activeSong);
   return (
     <div className="flex flex-col">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10">
@@ -36,8 +37,8 @@ const Discover = () => {
             song={song}
             isPlaying={isPlaying}
             activeSong={activeSong}
-            data={data}
             i={i}
+            data={data}
           />
         ))}
       </div>

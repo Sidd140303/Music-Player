@@ -10,10 +10,11 @@ export const spotify23 = createApi({
         }
     }),
     endpoints: (builders) => ({
-        getRecommendation: builders.query({ query: () => 'recommendations/?limit=10&seed_tracks=0c6xIDDpzE81m2q797ordA&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical,country' }),
+        getRecommendation: builders.query({ query: () => 'recommendations/?limit=18&seed_tracks=0c6xIDDpzE81m2q797ordA&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical,country' }),
+        getArtists: builders.query({ query: (id) => `artists/?ids=${id}` }),
     })
 });
 
 export const {
-    useGetRecommendationQuery,
+    useGetRecommendationQuery, useGetArtistsQuery
 } = spotify23; 

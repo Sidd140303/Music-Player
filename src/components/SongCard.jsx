@@ -8,22 +8,30 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
   const imageUrl = song.album.images?.[0]?.url || "default-image-path.jpg";
   const songTitle = song.album.name;
   const songArtist = song.artists[0].name;
-
-  const handlePauseClick = () => {};
-  const handlePlayClick = () => {};
+  const dispatch = useDispatch();
+  const handlePauseClick = () => {
+    dispatch(playPause(false));
+  };
+  const handlePlayClick = () => {
+    dispatch(setActiveSong({ song, data, i }));
+    dispatch(playPause(true));
+  };
 
   return (
-    <div className="flex flex-col w-[250px] p-4 bg-white bg-opacity-10 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
+    <div className="flex flex-col w-[250px] p-4 bg-white bg-opacity-30 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
       <div className="relative w-full h-56 group">
         <div
-          className={`absolute inset-0 justify-center items-center rounded-lg bg-black bg-opacity-30 group-hover:flex ${
-            activeSong === songTitle
-              ? "flex bg-black bg-opacity-40 rounded-lg"
-              : "hidden"
-          }   
+          className={`absolute inset-0 justify-center items-center rounded-lg bg-black bg-opacity-30 group-hover:flex 
+            ${
+              activeSong === songTitle
+                ? "flex bg-black bg-opacity-40 rounded-lg"
+                : "hidden"
+            }   
          `}
         >
           <PlayPause
+            isPlaying={isPlaying}
+            activeSong={activeSong}
             song={song}
             handlePause={handlePauseClick}
             handlePlay={handlePlayClick}

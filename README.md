@@ -2,7 +2,9 @@
 
 ## Overview
 
-This project is a fully functional music player built using React. It includes essential features such as play and pause, as well as basic controls typical of a music player. The application also displays top music charts. However, some functionalities are limited due to the usage of a free API with restricted calls.
+This project is a fully functional music player built using React. It includes essential features such as play and pause, as well as basic controls typical of a music player. The application also displays top music charts. However, some functionalities are limited due to the usage of a free API with restricted calls. 
+
+"IF YOU ARE FACING ANY ISSUE REGARDING THIS PROJECT CLICK HERE : [https://excalidraw.com/#json=X9ulO-v6q6Hz-Km8h6gH6,cjfj9RZxPekc-xjBwrtdDQ]
 
 ## Features
 

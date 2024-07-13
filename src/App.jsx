@@ -3,8 +3,12 @@ import { Route, Routes } from "react-router-dom";
 
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from "./components";
 import { Discover, Search, TopCharts } from "./pages";
+import { useEffect } from "react";
 
 const App = () => {
+  useEffect(() => {
+    alert("Click on Discover");
+  }, []);
   const { activeSong } = useSelector((state) => state.player);
 
   return (
